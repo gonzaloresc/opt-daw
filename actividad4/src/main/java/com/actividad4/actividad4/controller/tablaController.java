@@ -51,7 +51,7 @@ public class tablaController {
         // Aquí cambio los datos que estén mal por los valores límite
 
 
-        // y aquí abajo hago el doc html y formo la tabla
+        // y aquí abajo hago el doc html y formo la tabla en un string
         String tablaFinal = "<!DOCTYPE html>" +
                 "<html lang=\"es\">" +
                 "<head>" +
