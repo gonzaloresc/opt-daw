@@ -20,19 +20,36 @@ public class registroController {
     @ResponseBody
     public String procesarFormulario(@ModelAttribute Formulario formulario) {
 
+        boolean tieneContrasena = true;
+        String respuesta = "Los datos son: ";
+
         if (formulario.getNombre().isEmpty()) {
             return "El apartado \"nombre\" es obligatorio";
+        } else {
+            respuesta += "Nombre "+formulario.getNombre();
         }
         if (formulario.getApellidos().isEmpty()) {
             formulario.setApellidos("");
         }
+        respuesta += " Apellido "+formulario.getApellidos();
+
         if (formulario.getCorreo().isEmpty()) {
             return "El apartado \"correo\" es obligatorio";
+        } else {
+            respuesta += " Correo "+formulario.getCorreo();
         }
-        if (formulario.getContrasena(). )
+        if (formulario.getContrasena().isEmpty()) {
+            int pass = (int)(Math.random() * 1000000);
+            formulario.setContrasena(String.format("%06d",pass));
+            tieneContrasena = false;
+            respuesta += " Contra "
+        }
 
-        return "Formulario recibido. Nombre " + formulario.getNombre() + ", Apellidos: " + formulario.getApellidos()
-                + ", Correo: " + formulario.getCorreo() + ", Contraseña: " + formulario.getContrasena();
+        if (!tieneContrasena) {
+            return "Se ha generado una contraseña aleatoria: " + formulario.getContrasena();
+        }
+
+        return
 
     }
 

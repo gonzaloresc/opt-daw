@@ -4,13 +4,13 @@ public class Formulario {
     private String nombre;
     private String apellidos;
     private String correo;
-    private Integer contrasena;
+    private String contrasena;
 
 
     public Formulario() {
     }
 
-    public Formulario(String nombre, String apellidos, String correo, Integer contrasena) {
+    public Formulario(String nombre, String apellidos, String correo, String contrasena) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -26,7 +26,7 @@ public class Formulario {
     public String getCorreo() { return correo; }
     public void setCorreo(String correo) { this.correo = correo; }
 
-    public Integer getContrasena() { return contrasena; }
-    public void setContrasena(Integer contrasena) { this.contrasena = contrasena; }
+    public String getContrasena() { return contrasena; }
+    public void setContrasena(String contrasena) { this.contrasena = contrasena; }
 
 }
