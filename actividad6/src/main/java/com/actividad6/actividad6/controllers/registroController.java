@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 @Controller
 public class registroController {
 
@@ -20,36 +24,63 @@ public class registroController {
     @ResponseBody
     public String procesarFormulario(@ModelAttribute Formulario formulario) {
 
-        boolean tieneContrasena = true;
-        String respuesta = "Los datos son: ";
+        Map<String, String> claveUsu = new HashMap<>();
+        claveUsu.put("ana@example.com","246810");
+        claveUsu.put("luis@example.com","clave123");
+
+        String respuesta = "";
 
         if (formulario.getNombre().isEmpty()) {
             return "El apartado \"nombre\" es obligatorio";
         } else {
-            respuesta += "Nombre "+formulario.getNombre();
+            respuesta += "<p>Nombre: "+formulario.getNombre();
         }
         if (formulario.getApellidos().isEmpty()) {
             formulario.setApellidos("");
         }
-        respuesta += " Apellido "+formulario.getApellidos();
+        respuesta += " "+formulario.getApellidos();
 
         if (formulario.getCorreo().isEmpty()) {
             return "El apartado \"correo\" es obligatorio";
         } else {
-            respuesta += " Correo "+formulario.getCorreo();
+            respuesta += " </p><p>Correo: "+formulario.getCorreo();
         }
         if (formulario.getContrasena().isEmpty()) {
             int pass = (int)(Math.random() * 1000000);
             formulario.setContrasena(String.format("%06d",pass));
-            tieneContrasena = false;
-            respuesta += " Contra "
+            respuesta += " </p><p>Se ha generado una contraseña aleatoria: " + formulario.getContrasena();
+
         }
 
-        if (!tieneContrasena) {
-            return "Se ha generado una contraseña aleatoria: " + formulario.getContrasena();
+        respuesta += "</p>";
+
+        String salida;
+
+        if (claveUsu.containsKey(formulario.getCorreo())) {
+            if (claveUsu.get(formulario.getCorreo()).equals(formulario.getContrasena())) {
+                salida = "Inicio de sesión correcto";
+            } else {
+                salida = "Contraseña incorrecta";
+            }
+        } else {
+            salida = "Usuario inexistente, creando usuario";
+            claveUsu.put(formulario.getCorreo(),formulario.getContrasena());
         }
 
-        return
+
+        String html = """
+                <html lang="es">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Registro de usuario</title>
+                </head>
+                <body>
+                    <h1>
+                """;
+
+        html += salida + "</h1>" + respuesta + "</body></html>";
+
+        return html;
 
     }
 
