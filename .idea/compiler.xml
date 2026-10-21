@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="actividad4" />
         <module name="actividad6" />
         <module name="actividad5" />
+        <module name="taquilla" />
+        <module name="actividad4" />
+        <module name="salonjuegos" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +19,8 @@
       <module name="actividad4" options="-parameters" />
       <module name="actividad5" options="-parameters" />
       <module name="actividad6" options="-parameters" />
+      <module name="salonjuegos" options="-parameters" />
+      <module name="taquilla" options="-parameters" />
     </option>
   </component>
 </project>
