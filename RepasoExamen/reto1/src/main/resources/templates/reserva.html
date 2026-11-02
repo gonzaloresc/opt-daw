@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto 1 formulario</title>
+</head>
+<body>
+
+    <form action="/reservar" method="post">
+        <label for="eventoId">Obra:</label>
+        <input type="text" id="eventoId" name="eventoId" required><br>
+
+        <label for="nombreCliente">Nombre:</label>
+        <input type="text" id="nombreCliente" name="nombreCliente" required><br>
+
+        <p>Zona:</p>
+        <input type="radio" id="general" name="tipoEntrada" value="general" checked>
+        <label for="general">General</label>
+
+        <input type="radio" id="vip" name="tipoEntrada" value="vip">
+        <label for="vip">VIP</label>
+        <br>
+
+        <label for="cantidad">Número de entradas:</label>
+        <input type="number" id="cantidad" name="cantidad" required><br>
+
+        <label for="codigoCupon">Codigo de descuento:</label>
+        <input type="text" id="codigoCupon" name="codigoCupon"><br>
+
+        <button type="submit">Reservar</button>
+
+    </form>
+
+</body>
+</html>
