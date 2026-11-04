@@ -5,7 +5,7 @@ public class Prestamo {
     private Integer libroId;
     private String nombreSocio;
     private Integer diasPrestamo;
-    private Boolean carnetPremium;
+    private Boolean carnetPremium = false;
 
     public Prestamo(Integer libroId, String nombreSocio, Integer diasPrestamo, Boolean carnetPremium) {
         this.libroId = libroId;

@@ -4,11 +4,9 @@ import com.reto2.reto2.model.Libro;
 import com.reto2.reto2.model.Prestamo;
 import com.reto2.reto2.model.Respuesta;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +27,7 @@ public class PrestamoController {
     }
 
     @PostMapping("/prestamo")
+    @ResponseBody
     public Respuesta respuesta(@ModelAttribute Prestamo prestamo){
 
         Libro libroActual = null;
@@ -53,8 +52,67 @@ public class PrestamoController {
 
         libroActual.setEjemplaresDisponibles( libroActual.getEjemplaresDisponibles() - 1 );
 
+        Integer diasTotales = prestamo.getDiasPrestamo();
+        if (prestamo.getCarnetPremium()){
+            diasTotales += 7;
+        }
+        LocalDate fechaDevolucion = LocalDate.now().plusDays(diasTotales);
+
+        return new Respuesta(
+                "CONCEDIDO",prestamo.getNombreSocio(),libroActual.getTitulo(),diasTotales,fechaDevolucion.toString()
+        );
+    }
+
+    @GetMapping("/libros")
+    @ResponseBody
+    public List lista(
+            @RequestParam(name="categoria", required = false) String categoria,
+            @RequestParam(name="autor", required = false) String autor,
+            @RequestParam(name="soloDisponibles", required = false, defaultValue = "false") Boolean soloDisponibles
+            ){
+
+        List<Libro> resultadoFiltrado = new ArrayList<>();
+
+        for(Libro l : libros){
+            Boolean dentro = true;
+
+            if(categoria != null && !categoria.equalsIgnoreCase(l.getCategoria())){
+                dentro = false;
+            }
+            if(autor != null && !autor.equalsIgnoreCase(l.getAutor())){
+                dentro = false;
+            }
+            if(soloDisponibles && l.getEjemplaresDisponibles()<=0){
+                dentro = false;
+            }
+
+            if (dentro){
+                resultadoFiltrado.add(l);
+            }
+        }
+
+        return resultadoFiltrado;
+    }
+
+    @GetMapping("/")
+    public String inicio(){return "index";}
 
 
+    @GetMapping("/libro")
+    @ResponseBody
+    public Object o (@RequestParam(name="id")Integer id){
+        Libro libroSel = null;
+        for(Libro l : libros){
+            if(id.equals(l.getId())){
+                libroSel = l;
+            }
+        }
+
+        if(libroSel == null){
+            return new Respuesta("RECHAZADO","Libro no encontrado");
+        } else {
+            return libroSel;
+        }
 
 
     }
