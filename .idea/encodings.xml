@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/RepasoExamen/actividad1/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RepasoExamen/actividad2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RepasoExamen/actividad3/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RepasoExamen/reto1/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RepasoExamen/reto1mal/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/RepasoExamen/reto2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/actividad4/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/actividad5/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/actividad6/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/catalogoproductos/catalogoproductos/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/catalogoproductos/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/salonjuegos/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/taquilla/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/actividad1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/actividad2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/actividad3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/examen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/practica/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/reto1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/reto1mal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/RepasoExamen/reto2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/actividad4/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/actividad5/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/actividad6/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/catalogoproductos/catalogoproductos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/catalogoproductos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/salonjuegos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD1/taquilla/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD2/Actividad2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UD2/actividad1/src/main/java" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Nuevo evento</title></head>
+<body>
+<h1>Nuevo evento</h1>
+<form action="/eventos" method="post">
+    <p>Nombre: <input type="text" name="nombre"></p>
+    <p>Fecha: <input type="date" name="fecha"></p>
+    <p>Ubicación: <input type="text" name="ubicacion"></p>
+    <p>Categoría: <select name="categoria">
+        <option value="">-- Elige una --</option>
+        <option value="MUSICA">Música</option>
+        <option value="DEPORTE">Deporte</option>
+        <option value="TECNOLOGIA">Tecnología</option>
+        <option value="CULTURA">Cultura</option>
+    </select></p>
+    <p>Plazas disponibles: <input type="number" name="plazasDisponibles"></p>
+    <button type="submit">Guardar evento</button>
+</form>
+<p><a href="/">Volver al inicio</a></p>
+</body>
+</html>*

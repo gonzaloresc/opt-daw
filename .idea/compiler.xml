@@ -6,22 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="reto2" />
-        <module name="taquilla" />
-        <module name="actividad4" />
-        <module name="actividad3" />
-        <module name="reto1" />
-        <module name="actividad2" />
         <module name="actividad1" />
-        <module name="actividad6" />
-        <module name="actividad5" />
-        <module name="salonjuegos" />
-        <module name="catalogoproductos" />
+        <module name="Actividad2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="actividad2" target="21" />
+      <module name="actividad3" target="21" />
+      <module name="actividad4" target="21" />
+      <module name="actividad5" target="21" />
+      <module name="actividad6" target="21" />
+      <module name="catalogoproductos" target="21" />
+      <module name="examen" target="21" />
+      <module name="practica" target="21" />
+      <module name="reto1" target="21" />
+      <module name="reto2" target="21" />
+      <module name="salonjuegos" target="21" />
+      <module name="taquilla" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Actividad2" options="-parameters" />
       <module name="actividad1" options="-parameters" />
       <module name="actividad2" options="-parameters" />
       <module name="actividad3" options="-parameters" />
@@ -29,6 +35,8 @@
       <module name="actividad5" options="-parameters" />
       <module name="actividad6" options="-parameters" />
       <module name="catalogoproductos" options="-parameters" />
+      <module name="examen" options="-parameters" />
+      <module name="practica" options="-parameters" />
       <module name="reto1" options="-parameters" />
       <module name="reto2" options="-parameters" />
       <module name="salonjuegos" options="-parameters" />
